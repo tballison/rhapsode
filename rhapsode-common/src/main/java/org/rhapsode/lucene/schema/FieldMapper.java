@@ -169,4 +169,12 @@ public class FieldMapper {
     public void clear() {
         mappers.clear();
     }
+
+    @Override
+    public String toString() {
+        return "FieldMapper{" +
+                "mappers=" + mappers +
+                ", ignoreCase=" + ignoreCase +
+                '}';
+    }
 }

@@ -125,8 +125,13 @@ public class IndexerCLI {
         }
 
         if (defaultSchemaPath == null) {
-            defaultSchemaPath = DEFAULT_SCHEMA_PATH;
-            System.err.println("Didn't specify a default index schema; backing off to the default:" + DEFAULT_SCHEMA_PATH.toAbsolutePath());
+            if (Files.isRegularFile(collectionSchemaPath)) {
+                //all is good, don't bother warning;
+                System.err.println("Using existing schema in existing collection: "+collectionPath);
+            } else {
+                defaultSchemaPath = DEFAULT_SCHEMA_PATH;
+                System.err.println("Didn't specify a default index schema; backing off to the default:" + DEFAULT_SCHEMA_PATH.toAbsolutePath());
+            }
         }
         if (collectionSchemaPath == null || (
                 !Files.isRegularFile(collectionSchemaPath) && defaultSchemaPath == null)) {
@@ -200,7 +205,7 @@ public class IndexerCLI {
         addJVMArgs(cl.getOptionValue("lArgs"), args, "-");
 //        args.add("-Xmx128m");
         args.add("-cp");
-        args.add("resources/jars/rhapsode/*");
+        args.add("resources/jars/rhapsode/desktop/*");
         args.add("org.apache.tika.batch.fs.FSBatchProcessCLI");
         args.add("-bc");
         args.add("resources/config/batch-indexer-config.xml");

@@ -79,4 +79,10 @@ public class IdentityFieldMapper extends IndivFieldMapper {
         return ret.toArray(new String[ret.size()]);
     }
 
+    @Override
+    public String toString() {
+        return "IdentityFieldMapper{" +
+                "toField='" + toField + '\'' +
+                '}';
+    }
 }

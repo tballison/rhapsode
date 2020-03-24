@@ -101,10 +101,10 @@ public abstract class AbstractSearchHandler extends AbstractRhapsodeHandler {
         xhtml.startElement(H.TR, H.CLASS, CSS.TITLE_ROW);
         //second cell
         xhtml.startElement(H.TD, H.ALIGN, CSS.LEFT);
-        xhtml.startElement(H.IMG,
-                H.SRC, "/rhapsode/icon.gif",
+        /*xhtml.startElement(H.IMG,
+                H.SRC, "/rhapsode/icon2.gif",
                 CSS.WIDTH, "71",
-                CSS.HEIGHT, "33");
+                CSS.HEIGHT, "33");*/
         xhtml.endElement(H.TD);
         xhtml.endElement(H.TR);
         xhtml.startElement(H.TR);

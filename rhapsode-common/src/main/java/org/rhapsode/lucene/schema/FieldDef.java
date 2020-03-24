@@ -74,5 +74,12 @@ public class FieldDef extends AnalyzingFieldDefBase {
         return f;
     }
 
-
+    @Override
+    public String toString() {
+        return "FieldDef{" +
+                "allowMulti=" + allowMulti +
+                ", fieldName='" + fieldName + '\'' +
+                ", fieldType=" + fieldType +
+                '}';
+    }
 }

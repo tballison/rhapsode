@@ -60,7 +60,7 @@ public class IndexerConsumer extends FileResourceConsumer {
 
     @Override
     public boolean processFileResource(FileResource fileResource) {
-        LOG.debug("Indexing: " + fileResource.getResourceId());
+        LOG.warn("Indexing: " + fileResource.getResourceId());
         List<Metadata> metadataList = null;
         try (Reader r =
                      new BufferedReader(

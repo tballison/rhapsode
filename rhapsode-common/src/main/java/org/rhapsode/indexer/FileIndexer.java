@@ -71,7 +71,7 @@ public class FileIndexer {
         if (metadataList == null || metadataList.size() == 0) {
             return;
         }
-
+        LOG.warn(metadataList.get(0).toString());
         for (Metadata m : metadataList) {
             String rel = m.get(FSProperties.FS_REL_PATH);
             if (rel != null) {
@@ -135,6 +135,7 @@ public class FileIndexer {
                                    String uniqLuceneDocId) throws IOException {
         Map<String, String> lcKeyMap = new HashMap<>();
         FieldMapper fieldMapper = config.getRhapsodeCollection().getIndexSchema().getFieldMapper();
+
         if (fieldMapper.getIgnoreCase()) {
             for (String n : m.names()) {
                 String lc = n.toLowerCase(Locale.ENGLISH);

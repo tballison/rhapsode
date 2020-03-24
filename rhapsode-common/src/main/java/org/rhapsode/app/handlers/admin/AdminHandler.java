@@ -120,10 +120,10 @@ public abstract class AdminHandler extends AbstractRhapsodeHandler {
                 CSS.HEIGHT, "66");
         xhtml.endElement(H.TD);*/
         xhtml.startElement(H.TD, H.ALIGN, CSS.LEFT);
-        xhtml.startElement(H.IMG,
-                H.SRC, "/rhapsode/icon.gif",
+        /*xhtml.startElement(H.IMG,
+                H.SRC, "/rhapsode/icon2.gif",
                 CSS.WIDTH, "71",
-                CSS.HEIGHT, "33");
+                CSS.HEIGHT, "33");*/
         xhtml.endElement(H.TD);
         xhtml.endElement(H.TR);
         xhtml.startElement(H.TR);
